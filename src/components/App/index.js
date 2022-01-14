@@ -5,19 +5,26 @@ import Display from "../Display";
 
 function App() {
   const [searchCity, setSearchCity] = useState(undefined);
+  const [searchCountry, setSearchCountry] = useState(undefined);
   const [weather, setWeather] = useState(undefined);
 
-  function handleClick(text) {
-    setSearchCity(text);
+  function handleClick(city, country) {
+    setSearchCity(city);
+    setSearchCountry(country);
   }
 
   useEffect(() => {
     //fetch data from the api, when the user clicks the button (which updates searchCity)
 
     async function fetchData() {
-      const response = await fetch(
-        `https://api.weatherbit.io/v2.0/current?key=ee51ab2f856b4b1394f20735c3a99968&city=${searchCity}`
-      );
+      let URL = `https://api.weatherbit.io/v2.0/current?key=ee51ab2f856b4b1394f20735c3a99968&city=${searchCity}`;
+
+      if (searchCountry) {
+        URL += `&country=${searchCountry}`;
+      }
+
+      const response = await fetch(URL);
+
       const data = await response.json();
       const weatherData = {
         datetime: data.data[0].datetime,
@@ -34,7 +41,7 @@ function App() {
     if (searchCity) {
       fetchData();
     }
-  }, [searchCity]);
+  }, [searchCity, searchCountry]);
 
   return (
     <div className="App">
