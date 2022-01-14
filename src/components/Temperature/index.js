@@ -4,7 +4,7 @@ function Temperature({ temp, tempFeelsLike }) {
   return (
     <>
       <p> {temp}°C</p>
-      <p> {tempFeelsLike}°C</p>
+      <p>Feels like {tempFeelsLike}°C</p>
     </>
   );
 }
