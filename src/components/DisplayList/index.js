@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayList({ locations }) {
+function DisplayList({ locations, handleClick }) {
   return (
     <ul>
       {locations.map((location) => {
@@ -15,6 +15,13 @@ function DisplayList({ locations }) {
           >
             <p>City: {location.cityName}</p>
             <p>Country Code: {location.countryCode}</p>
+            <button
+              onClick={() =>
+                handleClick(location.cityName, location.countryCode)
+              }
+            >
+              View Weather Here
+            </button>
           </li>
         );
       })}

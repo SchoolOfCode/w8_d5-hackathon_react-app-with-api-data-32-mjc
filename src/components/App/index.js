@@ -65,7 +65,7 @@ function App() {
       <h1>Weather</h1>
       <Search handleClick={handleClick}></Search>
       {weather && <Display weather={weather} handleClick={addLocation} />}
-      <DisplayList locations={locations} />
+      <DisplayList locations={locations} handleClick={handleClick} />
     </div>
   );
 }
