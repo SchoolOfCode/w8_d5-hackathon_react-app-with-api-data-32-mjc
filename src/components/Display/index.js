@@ -4,10 +4,10 @@ import City from "../City";
 import Time from "../Time";
 import Icon from "../Icon";
 
-function Display() {
+function Display({ weather }) {
   return (
     <>
-      <Icon />
+      <Icon iconUrl={weather.iconUrl} />
       <Temperature></Temperature>
       <City></City>
       <Time></Time>

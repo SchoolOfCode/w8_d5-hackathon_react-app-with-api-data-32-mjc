@@ -1,7 +1,7 @@
 import React from "react";
 
-function Icon() {
-  return <h2>Icon Component</h2>;
+function Icon({ iconUrl }) {
+  return <img src={iconUrl} alt=""></img>;
 }
 
 export default Icon;
