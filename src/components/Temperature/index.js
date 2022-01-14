@@ -1,7 +1,12 @@
 import React from "react";
 
-function Temperature() {
-  return <h2>Temperature Component</h2>;
+function Temperature({ temp, tempFeelsLike }) {
+  return (
+    <>
+      <p> {temp}°C</p>
+      <p> {tempFeelsLike}°C</p>
+    </>
+  );
 }
 
 export default Temperature;

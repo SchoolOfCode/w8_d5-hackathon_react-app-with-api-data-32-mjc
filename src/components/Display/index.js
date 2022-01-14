@@ -8,7 +8,10 @@ function Display({ weather }) {
   return (
     <>
       <Icon iconUrl={weather.iconUrl} />
-      <Temperature></Temperature>
+      <Temperature
+        temp={weather.temp}
+        tempFeelsLike={weather.tempFeelsLike}
+      ></Temperature>
       <City></City>
       <Time></Time>
     </>
