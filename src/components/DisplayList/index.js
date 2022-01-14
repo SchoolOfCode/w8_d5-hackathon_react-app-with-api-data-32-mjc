@@ -11,6 +11,7 @@ function DisplayList({ locations, handleClick }) {
               border: "solid black 1px",
               width: "40vmin",
               margin: "auto",
+              background: "white",
             }}
           >
             <p>City: {location.cityName}</p>
