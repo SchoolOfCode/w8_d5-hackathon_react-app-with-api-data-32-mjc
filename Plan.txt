@@ -45,6 +45,7 @@ App
     Search
         -input, button
     Display
+        Icon
         Temperature
             -actual temp
             -feels like temp
