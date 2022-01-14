@@ -4,7 +4,7 @@ import City from "../City";
 import Time from "../Time";
 import Icon from "../Icon";
 
-function Display({ weather }) {
+function Display({ weather, handleClick }) {
   return (
     <>
       <Icon iconUrl={weather.iconUrl} />
@@ -17,6 +17,12 @@ function Display({ weather }) {
         countryCode={weather.countryCode}
       ></City>
       <Time datetime={weather.datetime}></Time>
+      <button
+        type="button"
+        onClick={() => handleClick(weather.cityName, weather.countryCode)}
+      >
+        Add Location
+      </button>
     </>
   );
 }

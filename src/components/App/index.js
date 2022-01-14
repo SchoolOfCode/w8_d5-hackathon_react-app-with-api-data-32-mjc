@@ -7,11 +7,13 @@ function App() {
   const [searchCity, setSearchCity] = useState(undefined);
   const [searchCountry, setSearchCountry] = useState(undefined);
   const [weather, setWeather] = useState(undefined);
+  const [locations, setLocations] = useState([]);
 
-  function handleClick(city, country) {
-    setSearchCity(city);
-    setSearchCountry(country);
-  }
+  /* 
+  [{
+    cityName: "",
+    countryCode: ""
+  }] */
 
   useEffect(() => {
     //fetch data from the api, when the user clicks the button (which updates searchCity)
@@ -37,17 +39,31 @@ function App() {
       };
       setWeather(weatherData);
     }
-
     if (searchCity) {
       fetchData();
     }
   }, [searchCity, searchCountry]);
 
+  function addLocation(city, country) {
+    setLocations([
+      ...locations,
+      {
+        cityName: city,
+        countryCode: country,
+      },
+    ]);
+  }
+
+  function handleClick(city, country) {
+    setSearchCity(city);
+    setSearchCountry(country);
+  }
+
   return (
     <div className="App">
       <h1>Weather</h1>
       <Search handleClick={handleClick}></Search>
-      {weather && <Display weather={weather} />}
+      {weather && <Display weather={weather} handleClick={addLocation} />}
     </div>
   );
 }
