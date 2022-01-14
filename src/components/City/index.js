@@ -1,7 +1,12 @@
 import React from "react";
 
-function City() {
-  return <h2>City Component</h2>;
+function City({ cityName, countryCode }) {
+  return (
+    <>
+      <p> {cityName}</p>
+      <p> {countryCode}</p>
+    </>
+  );
 }
 
 export default City;

@@ -12,8 +12,11 @@ function Display({ weather }) {
         temp={weather.temp}
         tempFeelsLike={weather.tempFeelsLike}
       ></Temperature>
-      <City></City>
-      <Time></Time>
+      <City
+        cityName={weather.cityName}
+        countryCode={weather.countryCode}
+      ></City>
+      <Time datetime={weather.datetime}></Time>
     </>
   );
 }

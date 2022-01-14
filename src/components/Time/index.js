@@ -1,7 +1,11 @@
 import React from "react";
 
-function Time() {
-  return <h2>Time Component</h2>;
+function Time({ datetime }) {
+  return (
+    <>
+      <p> {datetime}</p>
+    </>
+  );
 }
 
 export default Time;
