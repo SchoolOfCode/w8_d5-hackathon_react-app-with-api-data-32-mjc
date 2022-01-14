@@ -1,0 +1,37 @@
+Weather. App
+https://www.weatherbit.io/api/weather-current
+
+User. Searches:
+City
+    &city=Raleigh
+    &city=Raleigh&country=US
+    &city=Raleigh,NC
+    &city=Raleigh,North+Carolina
+PostCode
+    &postal_code=27601
+    &postal_code=27601&country=US
+
+Data. we want to use:
+
+datetime: Current cycle hour (YYYY-MM-DD:HH). 
+city_name: City name. 
+country_code: Country abbreviation. 
+temp: Temperature (default Celcius). 
+app_temp: Apparent/"Feels Like" temperature (default Celcius). 
+ weather: {
+    icon:Weather icon code.
+    description: Text weather description.
+}
+
+Icon codes:
+https://www.weatherbit.io/api/codes
+Icon example request:
+https://www.weatherbit.io/static/img/icons/c03d.png
+
+
+Displaying. the data:
+Big Icon
+Big temp
+app_temp (description)
+city_name with country_code
+datetime
