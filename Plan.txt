@@ -1,6 +1,9 @@
 Weather. App
 https://www.weatherbit.io/api/weather-current
 
+URL:
+https://api.weatherbit.io/v2.0/current?city={city}
+
 User. Searches:
 City
     &city=Raleigh
