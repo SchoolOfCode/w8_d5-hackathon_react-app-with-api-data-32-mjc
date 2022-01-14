@@ -62,7 +62,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Weather</h1>
+      <h1>Happy! Weather</h1>
+      <h2 style={{ fontStyle: "italic" }}>it's always happy weather! :)</h2>
       <Search handleClick={handleClick}></Search>
       {weather && <Display weather={weather} handleClick={addLocation} />}
       <DisplayList locations={locations} handleClick={handleClick} />
