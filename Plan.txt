@@ -35,3 +35,31 @@ Big temp
 app_temp (description)
 city_name with country_code
 datetime
+
+
+Components
+App
+    Search
+        -input, button
+    Display
+        Temperature
+            -actual temp
+            -feels like temp
+        City
+            -city 
+            -country
+        Time
+
+App
+-state: stores fetched weather data
+-state: current searched city
+-useEffect to fetch data
+
+Search
+-state: track user input
+-props: function to update App state (current searched city)
+    -button onClick calls function
+
+Display
+-props: all the data to display!
+    -pass these props to the children components
