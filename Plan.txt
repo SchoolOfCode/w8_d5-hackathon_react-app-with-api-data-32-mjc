@@ -59,6 +59,7 @@ Search
 -state: track user input
 -props: function to update App state (current searched city)
     -button onClick calls function
+- Function need to updates the states with the user Inputs
 
 Display
 -props: all the data to display!
