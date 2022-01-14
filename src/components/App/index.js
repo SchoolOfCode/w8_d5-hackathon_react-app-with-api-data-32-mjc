@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Search from "../Search";
 import Display from "../Display";
+import DisplayList from "../DisplayList";
 
 function App() {
   const [searchCity, setSearchCity] = useState(undefined);
@@ -64,6 +65,7 @@ function App() {
       <h1>Weather</h1>
       <Search handleClick={handleClick}></Search>
       {weather && <Display weather={weather} handleClick={addLocation} />}
+      <DisplayList locations={locations} />
     </div>
   );
 }
