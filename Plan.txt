@@ -1,0 +1,73 @@
+Weather. App
+https://www.weatherbit.io/api/weather-current
+
+URL:
+https://api.weatherbit.io/v2.0/current?city={city}
+
+User. Searches:
+City
+    &city=Raleigh
+    &city=Raleigh&country=US
+    &city=Raleigh,NC
+    &city=Raleigh,North+Carolina
+PostCode
+    &postal_code=27601
+    &postal_code=27601&country=US
+
+Data. we want to use:
+
+datetime: Current cycle hour (YYYY-MM-DD:HH). 
+city_name: City name. 
+country_code: Country abbreviation. 
+temp: Temperature (default Celcius). 
+app_temp: Apparent/"Feels Like" temperature (default Celcius). 
+ weather: {
+    icon:Weather icon code.
+    description: Text weather description.
+}
+
+Icon codes:
+https://www.weatherbit.io/api/codes
+Icon example request:
+https://www.weatherbit.io/static/img/icons/c03d.png
+
+
+Displaying. the data:
+Big Icon
+Big temp
+app_temp (description)
+city_name with country_code
+datetime
+
+
+Components
+App
+    Search
+        -input, button
+    Display
+        Icon
+        Temperature
+            -actual temp
+            -feels like temp
+        City
+            -city 
+            -country
+        Time
+
+App
+-state: stores fetched weather data
+-state: current searched city
+-useEffect to fetch data
+
+Search
+-state: track user input
+-props: function to update App state (current searched city)
+    -button onClick calls function
+- Function need to updates the states with the user Inputs
+
+Display
+-props: all the data to display!
+    -pass these props to the children components
+
+Dropdown Input for country codes
+PT, BR, US, GB
